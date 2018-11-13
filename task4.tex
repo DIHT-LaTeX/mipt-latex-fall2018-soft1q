@@ -1,0 +1,28 @@
+\documentclass[a4paper]{article}
+
+\usepackage[russian]{babel}
+\usepackage{listings}
+\usepackage{tikz, pgfplots}
+\usepackage{color}
+\definecolor{lightblue}{rgb}{0.9,1,1}
+\lstset{
+	backgroundcolor=\color{lightblue},
+	basicstyle=\ttfamily,
+	frame = single,
+	keywordstyle=\color{blue},
+	language=Python,
+	stringstyle = \color{red}
+}
+
+
+\begin{document}
+	\lstinputlisting[language=Python]{python/gen.py}
+	\vspace{1cm}	
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[width = 13cm, height = 13cm]
+			\addplot+ [only marks] table{data/data.dat};
+			\addplot+ [red, no marks, domain=-12:12] {3.0612*x + 2.6882};
+		\end{axis}
+	\end{tikzpicture}
+\end{document}
