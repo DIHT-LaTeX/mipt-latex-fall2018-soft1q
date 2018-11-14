@@ -5,22 +5,36 @@
 \usepackage{tikz, pgfplots}
 \usepackage{color}
 \definecolor{lightblue}{rgb}{0.9,1,1}
+
 \lstset{
-	backgroundcolor=\color{lightblue},
-	basicstyle=\ttfamily,
+	backgroundcolor = \color{lightblue},
+	basicstyle = \ttfamily,
 	frame = single,
-	keywordstyle=\color{blue},
-	language=Python,
-	stringstyle = \color{red}
+	keywordstyle = \color{blue},
+	language = python,	
+	morekeywords = {as},
+	stringstyle = \color{red},
+	numbers = left,
+	numberstyle = \sffamily\color{gray}
+}
+\pgfplotsset{
+	width = 18cm,
+	height = 10cm,
+	grid = major,
+	legend pos = north west
 }
 
-
 \begin{document}
-	\lstinputlisting[language=Python]{python/gen.py}
+	\lstinputlisting{python/gen.py}
 	\vspace{1cm}	
 	\centering
+	\hspace{-3cm}
 	\begin{tikzpicture}
-		\begin{axis}[width = 13cm, height = 13cm]
+		\begin{axis}[
+			xlabel = {kek},
+			ylabel = {lol},
+			legend entries = {Experiment data, $y = 3.0612x + 2.6882$}		
+		]
 			\addplot+ [only marks] table{data/data.dat};
 			\addplot+ [red, no marks, domain=-12:12] {3.0612*x + 2.6882};
 		\end{axis}

@@ -2,6 +2,10 @@
 
 \usepackage[russian]{babel}
 \usepackage{tikz}
+\usepackage{color}
+\definecolor{orangered}{rgb}{1, 0.27, 0}
+\definecolor{darkorange}{rgb}{1, 0.55, 0}
+\definecolor{orange}{rgb}{1, 0.63, 0}
 \usepackage[
 	margin = 0cm
 ]{geometry}
@@ -10,9 +14,9 @@
 	\vspace*{0.5cm}
 	\centering
 	\begin{tikzpicture}
-		\draw[step = 1mm, gray, thin] (0,0) grid (19cm,28cm);
-		\draw[step = 10mm, thick] (0,0) grid(19cm,28cm);
-		\draw[step = 5mm] (0,0) grid(19cm,28cm);
+		\draw[step = 1mm, orange, thin] (0,0) grid (19cm,28cm);
+		\draw[step = 10mm, orangered, thick] (0,0) grid(19cm,28cm);
+		\draw[step = 5mm, darkorange] (0,0) grid(19cm,28cm);
 	\end{tikzpicture}
 \end{document}
 
